@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="/administrator/components/com_flats/models/fields" >
+		<!-- Системные -->
+		<field name="id" type="text" default="0" readonly="true" class="readonly" label="JGLOBAL_FIELD_ID_LABEL" />
+		<field name="alias" type="text" label="JFIELD_ALIAS_LABEL" description="JFIELD_ALIAS_DESC" hint="JFIELD_ALIAS_PLACEHOLDER" size="45" />
+		<field name="title" type="text" label="Название" size="45" />
+		<field name="lot" type="text" label="Номер лота" size="45" />
+		<field name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="chzn-color-state" size="1" default="1" >
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field name="language" type="contentlanguage" label="JFIELD_LANGUAGE_LABEL" description="COM_FLATS_FIELD_LANGUAGE_DESC" >
+			<option value="*">JALL</option>
+		</field>
+		<field name="ordering" type="ordering" content_type="com_flats.flat" label="JFIELD_ORDERING_LABEL" description="JFIELD_ORDERING_DESC" />
+		<field name="created" type="calendar" label="JGLOBAL_FIELD_CREATED_LABEL" description="JGLOBAL_FIELD_CREATED_DESC" size="22" format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+		<field name="created_by" type="user" label="JGLOBAL_FIELD_Created_by_Label" description="JGLOBAL_FIELD_CREATED_BY_DESC" />
+		<field name="created_by_alias" type="text" label="JGLOBAL_FIELD_Created_by_alias_Label" description="JGLOBAL_FIELD_CREATED_BY_ALIAS_DESC"
+			size="20" />
+		<field name="modified" type="calendar" class="readonly" label="JGLOBAL_FIELD_Modified_Label" description="COM_FLATS_FIELD_MODIFIED_DESC"
+			size="22" readonly="true" format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+		<field name="modified_by" type="user" label="JGLOBAL_FIELD_MODIFIED_BY_LABEL" class="readonly" readonly="true" filter="unset"  />
+		<field name="checked_out" type="Text" size="6" label="JGLOBAL_FIELD_CHECKEDOUT_LABEL" description="JGLOBAL_FIELD_CHECKEDOUT_DESC" readonly="true" filter="unset" />
+		<field name="checked_out_time" type="Text" size="6" label="JGLOBAL_FIELD_CHECKEDOUT_TIME_LABEL" description="JGLOBAL_FIELD_CHECKEDOUT_TIME_DESC" readonly="true" filter="unset" />
+		<field name="publish_up" type="calendar" label="JGLOBAL_FIELD_PUBLISH_UP_LABEL" description="JGLOBAL_FIELD_PUBLISH_UP_DESC"
+			format="%Y-%m-%d %H:%M:%S" size="22" filter="user_utc" />
+		<field name="publish_down" type="calendar" label="JGLOBAL_FIELD_PUBLISH_DOWN_LABEL" description="JGLOBAL_FIELD_PUBLISH_DOWN_DESC"
+			format="%Y-%m-%d %H:%M:%S" size="22" filter="user_utc" />
+		<field name="access" type="accesslevel" label="JFIELD_ACCESS_LABEL" description="JFIELD_ACCESS_DESC" size="1" />
+		<field name="metakey" type="textarea" label="JFIELD_META_KEYWORDS_LABEL" description="JFIELD_META_KEYWORDS_DESC" rows="3" cols="30" />
+		<field name="metadesc" type="textarea" label="JFIELD_META_DESCRIPTION_LABEL" description="JFIELD_META_DESCRIPTION_DESC" rows="3" cols="30" />
+		<field name="xreference" type="text" label="JFIELD_XREFERENCE_LABEL" description="JFIELD_XREFERENCE_DESC" size="20" />
+						
+		<!-- Расположение -->
+		<field name="country" 			type="text" 			label="Страна" class="span12" size="40" />
+		<field name="region" 			type="typeregions" 		label="Область" default="" size="1" >
+			<option value="0">?</option>
+		</field>
+		<field name="city_type" 		type="list" 			label="Тип населенного пункта" default="1" size="1"  >
+			<option value="0">?</option>
+			<option value="1">Город</option>
+			<option value="2">Поселок</option>
+			<option value="3">Деревня</option>
+		</field>
+		<field name="city" 				type="text" 			label="Город" class="span12" size="40" />
+		<field name="township" 			type="typetownship" 	label="Округ" default="" size="1" >
+			<option value="0">?</option>
+		</field>
+		<field name="district"			type="typedistrict" 	label="Район" default="" size="1" >
+			<option value="0">?</option>
+		</field>
+		<field name="street_type" 		type="list" 			label="Тип улицы" default="1" size="1"  >
+			<option value="0">?</option>
+			<option value="7">Бульвар</option>
+			<option value="6">Переулок</option>
+			<option value="5">Площадь</option>
+			<option value="4">Проезд</option>
+			<option value="3">Проспект</option>
+			<option value="1">Улица</option>
+			<option value="2">Шоссе</option>
+		</field>
+		<field name="street" 			type="text" 			label="Улица" class="span12" size="40" />
+		<field name="flat" 			type="text" 			label="Дом" class="span12" size="40" />
+		<field name="gps_latitude" 		type="text"				label="GPS Широта" class="span12" size="40" />
+		<field name="gps_longitude"		type="text" 			label="GPS Долгота" class="span12" size="40" />
+		<field name="highway" 			type="typehighway" 		label="Шоссе" default="" size="1" >
+			<option value="0">?</option>
+		</field>
+		<field name="metro" 			type="typemetro" 		label="Метро" default="" size="1" >
+			<option value="0">?</option>
+		</field>
+		<field name="time_to_metro_1" 	type="text" 			label="Пешая доступность (мин)" class="span12" size="40" />
+		<field name="time_to_metro_2" 	type="text" 			label="Транспортная доступность (мин)" class="span12" size="40" />
+		<field name="km_ot_mkad" 		type="text" 			label="км от МКАД" class="span12" size="40" />
+		<!-- Описание строения -->
+		<field name="floor" 			type="integer" 			label="Этаж" first="0" last="40" step="1" default="0"   />
+		<field name="count_floor" 		type="integer" 			label="Этажность" first="0" last="40" step="1" default="0"   />
+		<field name="type_walls" 		type="typewalls" 		label="Тип дома (стены)" size="1" default=""  >
+			<option value="0">?</option>
+		</field>
+		<field name="year_of_flat" 	type="text" 			label="Год постройки" class="span12" size="40" />
+		<field name="garder_space" 		type="text" 			label="Площадь участка" class="span12" size="40" />
+		<!-- Описание квартиры -->
+		<field name="object_type" 		type="typeobject" 		label="Тип объекта" size="1" default=""  >
+			<option value="0">?</option>
+		</field>
+		<field name="rooms" 			type="integer" 			label="Количество комнат" first="0" last="10" step="1" default="0"   />
+		<field name="general_space" 	type="text" 			label="Общая площадь" class="span12" size="40" />
+		<field name="rooms_space" 		type="text" 			label="По комнатам" class="span12" size="40" />
+		<field name="living_space" 		type="text" 			label="Жилая площадь" class="span12" size="40" />
+		<field name="cook_space" 		type="text" 			label="Площадь кухни" class="span12" size="40" />
+		<field name="wc_space" 			type="text" 			label="Площадь туалета" class="span12" size="40" />
+		<field name="bathroom_space" 	type="text" 			label="Площадь ванной" class="span12" size="40" />
+		<field name="type_wc" 			type="list" 			label="Тип санузла" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">Раздельный</option>
+			<option value="2">Совместный</option>
+		</field>
+		<field name="location_wc"		type="list" 			label="Размещение санузла" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="1">Улица</option>
+			<option value="2">Помещение</option>
+		</field>
+		<field name="count_wc" 			type="integer" 			label="Количество сан.узлов" first="0" last="10" step="1" default="0"   />
+		<field name="view_from_window" 	type="list" 			label="Вид с окна" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">Двор</option>
+			<option value="2">Улица</option>
+			<option value="3">Двор и улица</option>
+		</field>
+		<field name="have_phone" 		type="list" 			label="Телефон" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_gas" 			type="list" 			label="Газ" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_electric"		type="list" 			label="Электричество" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_sewerage" 	type="list" 			label="Канализация" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="otdelka" 			type="list" 			label="Отделка, для всех, кроме участка" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="1">Черновая</option>
+			<option value="2">Чистовая</option>
+			<option value="3">Частичная</option>
+			<option value="4">Под ключ</option>
+		</field>
+			
+		<field name="designation" 		type="list" 			label="Целевое назначение земель" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="1">садовое некоммерческое товарищество</option>
+			<option value="2">индивидуальное жилищное строительство</option>
+			<option value="3">земля промназначения</option>
+		</field>
+		<field name="parking" 			type="list" 			label="Тип машиноместа" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="1">многоуровневый паркинг</option>
+			<option value="2">подземный паркинг</option>
+			<option value="3">крытый паркинг</option>
+			<option value="4">открытый паркинг</option>
+		</field>
+		<field name="security" 			type="list" 			label="Охрана" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="min_arenda_space" 	type="text" 			label="Минимальная площадь аренды" class="span12" size="40" />
+		<field name="have_furniture" 	type="list" 			label="Мебель" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_k_furniture" 	type="list" 			label="Кухонная мебель" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_washing_machine" type="list" 			label="Стиральная машина" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_fridge" 		type="list" 			label="Холодильник" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="have_tv" 			type="list" 			label="Телевизор" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="possible_kids" 	type="list" 			label="Можно с детьми" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="possible_animals"	type="list" 			label="Можно с животными" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="flooring" 			type="text" 			label="Пол" class="span12" size="40" />
+		<field name="height_walls" 		type="text" 			label="Высота стен/потолков" class="span12" size="40" />
+		<field name="class" 			type="text" 			label="Класс" class="span12" size="40" />
+		<field name="text" 				type="editor" 			label="Описание квартиры" buttons="false" filter="JComponentHelper::filterText"  />
+		<field name="loggia" 			type="list" 			label="Лоджия" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="lift" 				type="list" 			label="Лифт" size="1" default=""  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="status" 			type="list" 			label="Состояние" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">Отличное</option>
+			<option value="2">Хорошее</option>
+			<option value="3">Удовлетворительное</option>
+		</field>
+		<!-- Описание сделки -->
+		<field name="catid" 			type="categoryedit" 	label="Тип недвижимости" extension="com_flats" addfieldpath="/administrator/components/com_categories/models/fields" >
+			<option value="">Нет</option>
+		</field>
+		<field name="price" 			type="text" 			label="Цена" class="span12" size="10" />
+		<field name="price1" 			type="text" 			label="Цена продажи(для коммерческой)" class="span12" size="10" />
+		<field name="predoplata" 		type="text" 			label="Предоплата (мес.)" class="span12" size="10" />
+		<field name="trade_period" 		type="list" 			label="Период сделки" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">Длительный срок</option>
+			<option value="2">Посуточно</option>
+			<option value="3">Несколько месяцев</option>
+		</field>
+		<field name="currency" 			type="list" 			label="Валюта" size="1" default="1"  >
+			<option value="0">?</option>
+			<option value="1">Рубли</option>
+			<option value="2">Доллары</option>
+			<option value="3">Евро</option>
+		</field>
+		<field name="trade_type" 		type="list" 			label="Тип сделки" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">Альтернатива</option>
+			<option value="2">Свободная</option>
+		</field>
+		<field name="dogovor_type" 		type="list" 			label="Тип договора" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">прямая аренда</option>
+			<option value="2">субаренда</option>
+			<option value="3">продажа права аренды</option>
+			<option value="4">продажа объекта</option>
+			<option value="5">договор совместной деятельности</option>
+		</field>
+		
+		<field name="bargain_type" 		type="list" 			label="Вид сделки" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="1">Продажа</option>
+			<option value="2">Аренда</option>
+		</field>
+		<field name="hypothec" 			type="list" 			label="Ипотека" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="strah_deposit" 	type="list"				label="Страховой депозит" size="1" default="0"  >
+			<option value="0">?</option>
+			<option value="2">Нет</option>
+			<option value="1">Да</option>
+		</field>
+		<field name="doc_list" 			type="textarea" 		label="Документы" rows="10" cols="5" filter="raw"/>
+		<!-- Данные владельца -->
+		<field name="owner_fio" 		type="text" 			label="ФИО владельца" class="span12" size="20"  />
+		<field name="owner_phone" 		type="tel" 				label="Контакты владельца" class="span12" size="20"  />
+		<field name="owner_commission" 	type="text" 			label="Комиссия арендатора" class="span12" size="20"  />
+		<field name="type_phone" 	type="list" 			label="Тип Телефона" size="1" default="1"  >			
+			<option value="1">Основной</option>
+			<option value="2">Дополнительный</option>
+			
+		</field>
+		<!-- Данные маклера/посредника -->
+		<field name="broker_fio" 		type="text" 			label="ФИО посредника" class="span12" size="20"  />
+		<field name="broker_phone" 		type="tel" 				label="Контакты посредника" class="span12" size="20"  />
+		<field name="broker_comment" 	type="textarea" 		label="Комментарий риэлтора" rows="5" cols="100" filter="raw"/>
+		<field name="broker_commission" type="text" 			label="Комиссия агента" class="span12" size="20"  />
+		<!-- Другое -->
+		<field name="reklama" 			type="text" 			label="Место размещения" class="span12" size="20"  />
+		<field name="status_object" 	type="list" 			label="Статус объекта" size="1" default="1"  >
+			<option value="0">?</option>
+			<option value="1">В продаже</option>
+			<option value="2">Продан</option>
+			<option value="3">Приостановлен</option>
+		</field>
+		<field name="reklama_start" 	type="calendar" 		label="Дата старта рекламы" size="22" format="%Y-%m-%d" filter="user_utc" />
+		<field name="staff" 			type="staffs" 			label="Ответственный сотрудник" addfieldpath="/administrator/components/com_staffs/models/fields"  >
+			<option мalue="0">JNONE</option>
+		</field>
+		
+		<field name="images" 				type="custom" addfieldpath="/administrator/components/com_flats/models/fields" />
+		<field name="images_order" 			type="custom" addfieldpath="/administrator/components/com_flats/models/fields" />
+		<field name="images_title" 			type="custom" addfieldpath="/administrator/components/com_flats/models/fields" />
+		<field name="images_description" 	type="custom" addfieldpath="/administrator/components/com_flats/models/fields" />
+		
+		<field name="youtube_id" 			type="text" 			label="Id видео Youtube" class="span12" size="20"  />
+		
+	</fieldset>
+	
+	<fields name="params" label="JGLOBAL_FIELDSET_DISPLAY_OPTIONS">
+	</fields>
+
+	<fields name="metadata" label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+		<fieldset name="jmetadata" label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+			<field name="robots" type="list" label="JFIELD_METADATA_ROBOTS_LABEL" description="JFIELD_METADATA_ROBOTS_DESC" >
+				<option value="">JGLOBAL_USE_GLOBAL</option>
+				<option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+				<option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+				<option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+				<option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+			</field>
+			<field name="rights" type="text" label="JFIELD_META_RIGHTS_LABEL" description="JFIELD_META_RIGHTS_DESC" required="false" filter="string" cols="30" rows="2" />
+		</fieldset>
+
+		<field name="hits" type="text" class="readonly" size="6" label="JGLOBAL_HITS" description="COM_WEBLINKS_HITS_DESC" readonly="true" filter="unset" />
+
+	</fields>
+</form>

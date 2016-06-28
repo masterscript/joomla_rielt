@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension
+	type="module"
+	version="3.1"
+	client="site"
+	method="upgrade">
+	<name>Модуль сотрудников</name>
+	<author>Sergey170019</author>
+	<creationDate>Jan 2015</creationDate>
+	<copyright>Copyright (C) 2005 - 2014 Open Source Matters. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>170019@mail.ru</authorEmail>
+	<version>3.0.0</version>
+	<files>
+		<filename module="mod_staffs">mod_staffs.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_staffs.xml</filename>
+	</files>
+	
+	<help key="JHE LP_EXTENSIONS_MODULE_MANAGER_WHO_ONLINE" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="type" type="list" default="0" label="Тип вывода" >
+					<option value="0">Список всех сотрудников</option>
+					<option value="4">Любой сотрудник</option>
+					<option value="3">Список консультантов</option>
+					<option value="2">Сотрудник года</option>
+					<option value="1">Сотрудник месяца</option>
+				</field>
+				<field name="staffs" type="staffs" multiple="true" label="Список сотрудников для вывода" addfieldpath="/administrator/components/com_staffs/models/fields"  >
+					<option мalue="0">JNONE</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="layout" type="modulelayout" label="JFIELD_ALT_LAYOUT_LABEL" description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+				<field name="cache" type="list" default="0" label="COM_MODULES_FIELD_CACHING_LABEL" description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				<field 	name="filter_groups" type="radio" class="btn-group btn-group-yesno" default="0" label="MOD_WHOSONLINE_FIELD_FILTER_GROUPS_LABEL" description="MOD_WHOSONLINE_FIELD_FILTER_GROUPS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

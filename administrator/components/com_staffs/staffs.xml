@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.1" method="upgrade">
+	<name>com_staffs</name>
+	<author>sergey170019</author>
+	<creationDate>jan 2015</creationDate>
+	<copyright>(C) 2005 - 2014 Open Source Matters. All rights reserved.	</copyright>
+	<license>GNU General Public License version 2 or later; see	LICENSE.txt</license>
+	<authorEmail>170019@mail.ru</authorEmail>
+	
+	<version>3.0.0</version>
+	<description>COM_STAFFS_XML_DESCRIPTION</description>
+
+	
+
+	<files folder="site">
+		<filename>controller.php</filename>
+		<filename>index.html</filename>
+		<filename>metadata.xml</filename>
+		<filename>staffs.php</filename>
+		<filename>router.php</filename>
+		<folder>helpers</folder>
+		<folder>models</folder>
+		<folder>views</folder>
+	</files>
+	
+	<administration>
+		<menu img="class:staffs">com_staffs</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu link="option=com_staffs" view="feeds" img="class:staffs"
+				alt="Staffs/Feeds">com_staffs_feeds</menu>
+			<menu link="option=com_categories&amp;extension=com_staffs"
+				view="categories" img="class:staffs-cat" alt="Staffs/Categories">com_staffs_categories</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>access.xml</filename>
+			<filename>config.xml</filename>
+			<filename>controller.php</filename>
+			<filename>index.html</filename>
+			<filename>staffs.php</filename>
+			<folder>controllers</folder>
+			
+			<folder>helpers</folder>
+			<folder>models</folder>
+			<folder>tables</folder>
+			<folder>views</folder>
+		</files>
+		
+	</administration>
+</extension>
+

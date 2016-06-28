@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Documents list" option="COM_FLATS_CATEGORIES_VIEW_DEFAULT_OPTION">
+		<help
+			key = "JHELP_MENUS_MENU_ITEM_FLAT_CATEGORIES"
+		/>
+		<message>
+			<![CDATA[COM_FLATS_CATEGORIES_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+		>
+			<field name="id" type="category" extension="com_flats" label="JGLOBAL_FIELD_CATEGORIES_CHOOSE_CATEGORY_LABEL" show_root="true"
+				required="true"
+			/>
+		</fieldset>
+	</fields>
+
+</metadata>

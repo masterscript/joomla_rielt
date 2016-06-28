@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Выгрузка Циан" option="Выгрузка Циан">
+		<help
+			key = "JHELP_MENUS_MENU_ITEM_HOUSE_CATEGORY"
+		/>
+		<message>
+			<![CDATA[Выгрузка Циан]]>
+		</message>
+	</layout>
+</metadata>

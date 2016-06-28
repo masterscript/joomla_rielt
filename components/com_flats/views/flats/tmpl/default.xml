@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Страница объекта" option="Выводит страницу конкретного объекта">
+		<help
+			key = "JHELP_MENUS_MENU_ITEM_HOUSE_SINGLE_HOUSE"
+		/>
+		<message>
+			<![CDATA[COM_HOUSES_HOUSE_VIEW_DEFAULT_DESC]]>
+		</message>
+	</layout>
+
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+			addfieldpath="/administrator/components/com_houses/models/fields"
+		 >
+
+			<field name="id" type="modal_house"
+				
+				label="Выберите вопрос"
+				required="true"
+				edit="true"
+				clear="false"
+			/>
+		</fieldset>
+	</fields>
+
+	<!-- Add fields to the parameters object for the layout. -->
+	<fields name="params">
+
+
+	</fields>
+</metadata>

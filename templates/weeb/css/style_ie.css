@@ -1,0 +1,8 @@
+section, header, footer, nav, fieldset {
+	display: block;
+	margin-top: 0em;
+	margin-bottom: 0em;
+}
+p, a, b, h1, h2, h3, h4, h5, h6, span, em, i {letter-spacing: -.5px;}
+
+

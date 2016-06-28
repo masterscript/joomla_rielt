@@ -1,0 +1,504 @@
+@charset "UTF-8";
+
+
+
+
+#apt-map{
+	width: 100%;
+	height: 500px;
+}
+.block-flat{
+	float: left;
+	width:350px;
+	margin:0 23px;
+	border: 1px solid black;
+	height: 200px;
+	margin-top: 25px;
+}
+.block-flat img{
+	float: left;
+}
+
+.block-dom{
+	width: 30px;
+	height: 30px;
+	background: red;
+}
+.etazh-dom.active,
+.etazh-dom:hover{
+	background: green;
+	cursor: pointer;
+}
+.loltet{
+	width: 50%;
+	float: left;
+}
+.loltet tr{
+	height: 40px;
+}
+.maparea:hover{
+	background: rgba(255, 255, 255, 0.61);
+}
+canvas{
+    pointer-events: none;  
+    position: absolute;
+}
+.shema-doma{
+	width: 700px;
+	text-align:	center;
+	float: left;
+	position: relative;
+	padding-bottom: 110px;
+	position: relative; 
+}
+.shema-doma .geo-metka-dom{
+	position: absolute;
+	right: 40px;
+	bottom: 0px;
+	
+}
+.fancybox-title-float-wrap {
+    position: absolute;
+    top: -58px;
+    left: 0px;
+    width: 100%!important;
+    height: 58px;
+    background: #96004f;
+    text-align: center;
+    line-height: 58px;
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+.fancybox-close {
+    position: absolute;
+    width: 65px;
+    height: 58px;
+    right: 0px;
+    top: -58px;
+    background: #162029 url('../images/closebox_new.png') no-repeat center;
+    border: none;
+}
+#etazh_info{
+	min-width: 500px;
+}
+.container-img{
+	overflow: hidden;
+	display: inline-block;
+	position: relative;
+	min-height: 550px;
+}
+.prev_etazh{
+	float: left;
+	line-height: 40px;
+	font-size: 18px;
+	padding: 0 15px;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #ffcb05;
+	margin-bottom: 10px;
+	margin-left: 10px;
+}
+.next_etazh{
+	float: right;
+	line-height: 40px;
+	font-size: 18px;
+	padding: 0 15px;
+	border-radius: 3px;
+	cursor: pointer;
+	background: #ffcb05;
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+.prev_etazh:hover, .next_etazh:hover{
+	color: white;
+	background: #0c3656;
+}
+.fancybox-skin{
+	background: white;
+}
+.info-color{
+	text-align: center;
+	font-size: 17px;
+}
+.info-color span{
+	margin: 0 20px;
+	display: inline-block;
+	line-height: 20px;
+}
+.info-red:before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 10px;
+	background: rgba(255, 0, 0, 0.30);
+}
+.info-green:before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 10px;
+	background: rgba(0, 128, 0, 0.50);
+}
+.info-yellow:before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	float: left;
+	margin-right: 10px;
+	background: rgba(251, 116, 0, 0.50);
+}
+.vspluvashka{
+	width: 146px;
+	height: 66px;
+	position: absolute;
+	background: white;
+	z-index: 9;
+	border: 2px solid #ECC400;
+	margin-left: -75px;
+	margin-top: -90px;
+	display: none;
+
+}
+.vspluvashka:after{
+	content: '';
+    display: block;
+    position: absolute;
+	top: 68px;
+    left: 55px;
+    bottom: 0px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ECC400;
+}
+.vspluvashka-etazh{
+	width: 146px;
+	height: 66px;
+	position: absolute;
+	background: white;
+	z-index: 9;
+	border: 2px solid #ECC400;
+	margin-left: -75px;
+	margin-top: -90px;
+	display: none;
+}
+.vspluvashka-etazh:after{
+	content: '';
+    display: block;
+    position: absolute;
+	top: 68px;
+    left: 55px;
+    bottom: 0px;
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-top: 20px solid #ECC400;
+}
+
+
+/* список квартир дома */
+#collection-list {height: auto; margin-top: 45px;}
+.miel-kursk-shahmatka-right-tower {
+		width: 480px;
+		margin-top: 40px;
+		float: right;
+		background: #ffffff;
+		vertical-align: top;
+	}
+
+	.shahmatka-result-table {
+		border-spacing: 0px;
+		width: 100%;
+		background: #ffffff;
+		
+		
+	}
+		
+		.shahmatka-result-table thead tr {
+			height: 90px;
+			background: #0b4366;
+		}
+			.shahmatka-result-table thead tr th {
+				position: relative;
+				width: 193px;
+				color: #ffffff;
+				font: 700 16px / 17px PT Sans;
+				vertical-align: top;
+			}
+			.shahmatka-result-table thead tr th p {margin-top: 15px;}
+
+			.shahmatka-result-table .selection {
+				position: absolute;
+				bottom: 17px;
+				left: 50%;
+  				margin-left: -15px;
+			}
+			.shahmatka-result-table .selection a {
+				display: inline-block;
+				margin-right: 7px;
+			}
+			.shahmatka-result-table .selection a:first-child {
+				background: url('../images/seven-shahmatka-numbers.png') no-repeat -26px -390px;
+				width: 11px;
+				height: 7px;
+			}
+			.shahmatka-result-table .selection a:first-child:hover {
+				background: url('../images/seven-shahmatka-numbers.png') no-repeat -6px -408px;
+			}
+			.shahmatka-result-table .selection a:last-child {
+				background: url('../images/seven-shahmatka-numbers.png') no-repeat -5px -391px;
+				width: 11px;
+				height: 7px;
+			}
+			.shahmatka-result-table .selection a:last-child:hover {
+				background: url('../images/seven-shahmatka-numbers.png') no-repeat -24px -409px;
+			}
+			
+			.shahmatka-result-table tbody tr {
+				height: 55px;
+				
+			}
+				.shahmatka-result-table tbody tr:hover {
+					background: #eeeeee;
+				}
+				.shahmatka-result-table tbody tr td {
+					text-align: center;
+					border-bottom: 2px solid #eeeeee;
+					width: 193px;
+				}
+				.shahmatka-result-table tbody tr td:first-child {
+					border-left: 2px solid #eeeeee;
+				}
+				.shahmatka-result-table tbody tr td:last-child {
+					border-right: 2px solid #eeeeee;
+				}
+			.shahmatka-result-table tbody tr td a {
+				display: inline-block;
+  				width: 100%;
+				text-decoration: none;
+				color: #1f252d;
+				font: 400 14px / 14px PT Sans;
+			}
+			
+			.shahmatka-result-table .not_sale {
+				width: 105px;
+  				height: 40px;
+				margin: auto;
+				display: block;
+				font: 400 14px / 40px PT Sans;
+				background: #ffcb05;
+			}
+			.shahmatka-result-table .how_much {
+				width: 105px;
+  				height: 35px;
+				padding-top: 5px;
+				margin: auto;
+				display: block;
+				color: #ffffff;
+				font: 400 14px / 14px PT Sans;
+				background: #970050;
+			}
+			.shahmatka-result-table .order_types {
+				position: absolute;
+				bottom: 17px;
+				left: 50%;
+  				margin-left: -15px;
+			}
+			.shahmatka-result-table .order_types a {
+				display: inline-block;
+				margin-right: 7px;
+			}
+			.shahmatka-result-table .order_types a:first-child {
+				background: url('../images/shahmatka-numbers.png') no-repeat -26px -390px;
+				width: 11px;
+				height: 7px;
+			}
+			.shahmatka-result-table .order_types a:first-child:hover, .shahmatka-result-table .order_types a.order_asc.hid {
+				background: url('../images/shahmatka-numbers.png') no-repeat -6px -408px;
+			}
+			.shahmatka-result-table .order_types a:last-child {
+				background: url('../images/shahmatka-numbers.png') no-repeat -5px -391px;
+				width: 11px;
+				height: 7px;
+			}
+			.shahmatka-result-table .order_types a:last-child:hover, .shahmatka-result-table .order_types a.order_desc.hid {
+				background: url('../images/shahmatka-numbers.png') no-repeat -24px -409px;
+			}
+/* конец список квартир дома */
+/* фильтр в доме */
+.miel-kursk-wide-shahmatka-filter {
+		width: 460px;
+		padding-top: 25px;
+		padding-left: 20px;
+		height: 330px;
+		float: right;
+		background-color: #0b4366;
+	}
+		.miel-kursk-wide-shahmatka-filter h2 {
+			margin-left: -40px;
+			text-align: center;
+			color: #ffffff;
+			font: 300 22px / 24px Roboto;
+		}
+		.miel-kursk-wide-shahmatka-filter-check {
+			margin-top: 30px;
+			margin-bottom: 35px;
+		}
+			.miel-kursk-wide-shahmatka-filter-check .captions {
+				margin-right: 25px;
+				display: inline-block;
+				color: #ffffff;
+				font: 400 15px / 16px PT Sans;
+			}
+			.miel-kursk-wide-shahmatka-filter-check p {
+				display: inline-block;
+				color: #ffffff;
+				font: 700 45px / 45px Arial;
+			}
+			.miel-kursk-wide-shahmatka-filter-check label {
+				vertical-align: sub;
+				margin-right: 20px;
+			}
+			.miel-kursk-wide-shahmatka-filter-check .last-lb {margin-right: 0px;}
+
+			.miel-kursk-wide-shahmatka-filter-check input[type="checkbox"] {display: none;}
+            
+            
+            .miel-kursk-wide-shahmatka-filter-check input[type="checkbox"] + label::before {
+                content: "";
+                display: inline-block;
+                background: url('../images/seven-shahmatka-numbers.png') no-repeat;
+				
+            }
+            
+            .miel-kursk-wide-shahmatka-filter-check input[type="checkbox"] + label::before {
+                vertical-align: super;
+                margin-left: 10px;
+                background-position:  -12px -434px;
+                -ms-background-position:  -12px -434px;
+	            width: 23px;
+	            height: 24px;
+            }
+            .miel-kursk-wide-shahmatka-filter-check input[type="checkbox"]:checked + label::before {
+                background-position: -12px -469px;
+                -ms-background-position: -12px -469px;
+	            width: 23px;
+	            height: 24px;
+            }
+.toddler {margin-bottom: 25px;}
+
+		.toddler div {display: inline-block;}
+
+		.toddler-1 {
+			height: 33px;
+		}
+		.toddler .caption {
+			display: inline-block;
+			width: 65px;
+			color: #ffffff;
+			font: 400 14px / 33px PT Sans;
+		}
+		.toddler .ob-body {
+			display: inline-block;
+			    background-color: rgb(17, 58, 85);
+			color: #ffffff;
+			font: 400 14px / 33px PT Sans;
+		}
+			.ob-body .ob-left-col {
+				min-width: 50px;
+				padding: 0px 5px 0px 10px;
+				height: 33px;
+				border-right: 1px solid #ffffff;
+				color: #fff;
+			}
+			.ob-body .ob-rigth-col {
+				position: relative;
+				min-width: 70px;
+				padding: 0px 10px 0px 5px;
+				height: 33px;
+				border-left: 1px solid #ffffff;
+				color: #fff;
+			}
+			.kladovki .ob-body .ob-rigth-col {
+				margin-left: 4px;
+			}
+			.ob-body .ob-rigth-col strong {
+				position: absolute;
+				width: 20px;
+				right: 5px;
+				height: 33px;
+				font-weight: normal;
+				font-size: 20px;
+				line-height: 33px;
+			}
+			.ob-body .ob-rigth-col strong sup {
+				font-size: 14px;
+				line-height: 14px;
+			}
+			.ob-body .slider {width: 170px;}
+			
+			.toddler-3 .ob-rigth-col strong {
+				background: url('../images/k1.png') right center no-repeat;
+			}
+
+			.miel-kursk-wide-shahmatka-filter .toddler-3 .caption {
+				line-height: 14px !important;
+				vertical-align: sub;
+			}	
+			.slider-div {
+				background: #0b4366;
+				height: 5px;
+				position: relative;
+				width: 165px;
+			}
+			.ui-slider-range {
+				background: #fff;
+				height: 5px;
+				position: absolute;
+			}
+			.ui-slider-handle {
+				position: absolute;
+				z-index: 2;
+				width: 13px;
+				height: 17px;
+				background: #fff;
+				cursor: pointer;
+				border-radius: 0px;
+				top: -6px;
+				margin-left: -7px;
+			}			
+			#miel-kursk-wide-plan .ui-slider-handle {
+				position: absolute;
+				z-index: 2;
+				width: 13px;
+				height: 17px;
+				background: #fff;
+				cursor: pointer;
+				border-radius: 0px;
+				top: -6px;
+				margin-left: -5px;
+			}
+			.miel-kursk-wide-molod {
+				
+			  min-width: 1200px;
+			  padding-top: 0px;
+			  padding-bottom: 0px;
+			  background: url(../images/miel-kursk-molod-bg.jpg) center no-repeat;
+			  background-size: 100% 100%;
+			}
+
+/* конец фильтр в доме */
+.info-dom-left{
+float: left;
+width: 700px;		
+}
+.info-dom-right{
+float: right;
+width: 480px;	
+}
